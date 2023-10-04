@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+          <span>Lista de Proprietários</span>
+          <button onclick="openModal()" id="new">Incluir</i></button>
+        </div>
+    
+        <div class="divTable">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+                <th>Nome do pet</th>
+                <th class="acao">Editar</th>
+                <th class="acao">Excluir</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="modal-container">
+          <div class="modal">
+            <form>
+              <div id="mensagem-erro" style="color: red;"></div>
+              <label for="m-nome">Nome</label>
+              <input id="m-nome" type="text" placeholder="Nome do usuário" required />
+              <label for="m-email">Email</label>
+              <input id="m-email" type="text" placeholder="user@gmail.com" required />
+      
+              <label for="m-telefone">Telefone</label>
+              <input id="m-telefone" type="text" placeholder="(DDD) 9XXXX-XXXX"  required />
+      
+              <label for="m-endereco">Endereço</label>
+              <input id="m-endereco" type="text" placeholder="Rua B, número 14"  required />
+
+              <label for="m-nomePet">Nome do pet</label>
+              <input id="m-nomePet" type="text" placeholder="Bolinha" required />
+              <button id="btnSalvar">Salvar</button>
+            </form>
+          </div>
+        </div>
+    
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>
