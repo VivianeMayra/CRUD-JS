@@ -74,9 +74,15 @@ function editItem(index) {
 }
 
 function deleteItem(index) {
-  itens.splice(index, 1)
-  setItensBD()
-  loadItens()
+  const confirmDelete = window.confirm(
+    "Tem certeza de que deseja excluir este item?"
+  )
+
+  if (confirmDelete) {
+    itens.splice(index, 1)
+    setItensBD()
+    loadItens()
+  }
 }
 
 function insertItem(item, index) {

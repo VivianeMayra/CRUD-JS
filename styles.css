@@ -29,6 +29,8 @@ header{
 
 header a{
     cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
 
 .logo{
@@ -47,6 +49,7 @@ header a{
 .text{
     color: #000;
     width: 576px;
+    margin-top: 30px;
 }
 
 .text h2{

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <script>
+        function handleCredentialResponse(response) {
+            const data= jwt_decode(response.credential)
+            console.log(data)
+        }
+        window.onload = function () {
+
+          google.accounts.id.initialize({
+            client_id: "421688139839-u3mkrq4065n3l95enbtvn2hn1n3eno8q.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+          });
+
+          google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { 
+                theme: "outline",
+                size: "large", 
+                type:"standard",
+                shape:"rectangular",
+                text:"signin_with",
+                logo_alignment:"center",
+                width:"340"
+             }  // customization attributes
+          );
+          google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+      </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/ion_paw-sharp.png" alt="pata"/>
+            <a href="../index.html">PetSitter</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="containerLogin">
+            <h2>Boas vindas!</h2>
+            <p>Faça seu login ou acesse com o google</p>
+            <div id="mensagem-erro" style="color: red;"></div>
+            <input type="email" placeholder="Email" id="email" required>
+            <input type="password" placeholder="Senha" id="senha" required>
+            <div id="buttonDiv"></div>
+            <button id="login-button" onclick="redirect()"><img src="./icon/RocketLaunch (1).png"/>Acessar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
